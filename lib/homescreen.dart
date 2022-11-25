@@ -11,16 +11,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Color.fromARGB(255, 241, 235, 235),
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              CupertinoIcons.list_dash,
-              color: Colors.grey.shade500,
-            )),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Color.fromARGB(255, 241, 235, 235),
+          leading: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                CupertinoIcons.list_dash,
+                color: Colors.grey.shade500,
+              )),
+        ),
       ),
     );
   }
