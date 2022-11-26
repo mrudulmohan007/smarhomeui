@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'components/appliances.dart';
+import 'package:flutter_smarthomeui/components/appliances.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -60,7 +62,81 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width * 0.08,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Row(
+                      children: [
+                        Appliance(
+                          colour: Colors.yellow,
+                          icon: Icons.lightbulb,
+                          label: 'Light',
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.03,
+                        ),
+                        Appliance(
+                          colour: Colors.blueAccent,
+                          icon: Icons.play_circle_fill_outlined,
+                          label: 'Media',
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width * 0.05,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Row(
+                      children: [
+                        Appliance(
+                          colour: Colors.redAccent,
+                          icon: Icons.videocam_rounded,
+                          label: 'Camera',
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.03,
+                        ),
+                        Appliance(
+                          colour: Colors.greenAccent.shade700,
+                          icon: Icons.wifi,
+                          label: 'Wi-fi',
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width * 0.08,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 20,
+                          top: 20,
+                        ),
+                        child: Text(
+                          'Living Room',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            shadows: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                blurRadius: 3,
+                                offset: Offset(2, 3),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ],
               )
             ],
