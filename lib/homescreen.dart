@@ -137,6 +137,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     ],
                   ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 20,
+                          top: 10,
+                        ),
+                        child: Text(
+                          '2 Devices',
+                          style: TextStyle(),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               )
             ],
