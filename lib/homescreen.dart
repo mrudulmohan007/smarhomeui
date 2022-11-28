@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'components/appliances.dart';
-import 'package:flutter_smarthomeui/components/appliances.dart';
+import 'components/roomappliances.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -146,10 +146,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Text(
                           '2 Devices',
-                          style: TextStyle(),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey.shade700,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width * 0.08,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 20,
+                    ),
+                    child: Row(
+                      children: [
+                        RoomAppliances(),
+                      ],
+                    ),
                   ),
                 ],
               )
