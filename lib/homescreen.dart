@@ -4,13 +4,13 @@ import 'components/appliances.dart';
 import 'components/roomappliances.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isHome = true;
+  bool isSetting = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -164,12 +164,123 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Row(
                       children: [
-                        RoomAppliances(),
+                        RoomAppliances(
+                          imgPath: 'images/router.png',
+                          label: 'Netgear Wifi',
+                          imgWidth: 0.2,
+                          imgHt: 0.2,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.05,
+                        ),
+                        RoomAppliances(
+                          imgPath: 'images/air-conditioner.png',
+                          label: 'Living Room AC',
+                          imgWidth: 0.24,
+                          imgHt: 0.3,
+                        ),
                       ],
                     ),
                   ),
                 ],
-              )
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.30),
+                          offset: Offset(0, -2),
+                          blurRadius: 2,
+                        ),
+                      ],
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.home,
+                            color: isHome ? Colors.blueAccent : Colors.grey,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              isHome = true;
+                              isSetting = false;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            Icons.settings,
+                            color: isSetting ? Colors.blueAccent : Colors.grey,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              isHome = false;
+                              isSetting = true;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(bottom: 5, left: 5, right: 5),
+                        width: 65,
+                        height: 65,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              offset: Offset(0, 2),
+                              blurRadius: 2,
+                            ),
+                          ],
+                          color: Colors.white,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blueAccent.shade700,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                offset: Offset(0, 2),
+                                blurRadius: 2,
+                              )
+                            ],
+                          ),
+                          child: Icon(
+                            Icons.mic,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ],
           ),
         ),
